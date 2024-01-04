@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.contactsapp.ui.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/contactRegisterNavigate"
+            app:destination="@id/contactRegisterFragment" />
+        <action
+            android:id="@+id/contactDetailNavigate"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.example.contactsapp.ui.fragment.ContactDetailFragment"
+        android:label="fragment_contact_detail"
+        tools:layout="@layout/fragment_contact_detail" >
+        <argument
+            android:name="contact"
+            app:argType="com.example.contactsapp.data.entity.Contacts" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactRegisterFragment"
+        android:name="com.example.contactsapp.ui.fragment.ContactRegisterFragment"
+        android:label="fragment_contact_register"
+        tools:layout="@layout/fragment_contact_register" />
+</navigation>
